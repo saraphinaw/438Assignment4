@@ -1,8 +1,6 @@
 .App {
   text-align: center;
-  background: #c0c0aa;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #1cefff, #c0c0aa);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1cefff, #c0c0aa); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgba(26, 161, 161, 0.753);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -10,9 +8,9 @@
   justify-content:space-between;
 }
 .header{
-  background:rgba(255,255,255,0.2);
-  border-bottom:1px solid white;
-  height: 2.5rem;
+  background:rgba(255, 255, 255, 0.26);
+  border-bottom:1px black;
+  height: 3rem;
   display:flex;
   align-items: center;
   padding: 0 12px;
@@ -31,8 +29,8 @@
 }
 
 .text-input{
-  background:rgba(255,255,255,0.2);
-  border-top:1px solid white;
+  background:rgba(255, 255, 255, 0.26);
+  border-top:1px black;
   height: 4rem;
   position:relative; /*must add position relative to parent if want to change child*/
   display:flex;
@@ -54,10 +52,20 @@
   font-size:1rem;
   color: black;
 }
+.send-button[disabled]{
+  background:grey;
+  cursor: default;
+}
+.send-button > svg {
+  color: black;
+}
+.send-button[disabled] > svg {
+  color: white;
+}
 
 .input{
-  background:black;
-  border: 1px solid white;
+  background:rgba(31, 95, 168, 0.39);
+  border: 2px rgb(17, 58, 105);
   border-radius: 10rem;
   height: 2rem;
   width: 70%;
@@ -69,22 +77,30 @@
 
 
 .message{
-  margin: 1rem;
-  background:white;
-	border-radius: 10rem 10rem 0 10rem;
-  height:1rem;
-  padding:.5rem 1rem;
-  display:flex;
-  justify-content: flex-end;
-  align-self:flex-end;
+  background:rgba(31, 95, 168);
+  color:white;
+  border-radius:10px;
+  margin:8px;
+  display: inline-block;
+  padding: 4px 12px;
+  position:relative;
+}
+
+.message-name{
+  position:absolute;
+  top:-11px;
+  left: 7px;
+  font-size: .55rem;
+  color: black;
+  font-weight: bold;
 }
 
 .messages{
   display:flex;
-  flex-direction:column;
+  flex-direction:column-reverse;
   flex: 1;
-  justify-content: flex-end;
-  margin:1px;
+  overflow: auto;
+  
 }
 
 .previous-text{
@@ -96,4 +112,53 @@
   display: flex;
   align-self: flex-start;
   justify-content:flex-start; 
+}
+
+.message-row{
+  width:100%;
+}
+
+.name-picker{
+  position: absolute;
+  right:1rem;
+  top:1rem;
+  display:flex;
+  align-self: flex-end;
+}
+
+.edit-button{
+  border: none;
+  background: none;
+  cursor:pointer;
+  outline:none;
+}
+
+.username{
+  font-size:1rem;
+  color:rgb(31, 95, 168);
+}
+
+.name-input{
+  background:rgba(255, 255, 255, 0.432);
+  border:none;
+  border-radius: 10rem;
+  outline:none;
+  padding-left: 10px;
+  margin-right: 5px;
+  height: 1.2rem;
+}
+
+.save-button{
+  background: rgba(255, 255, 255, 0.692);
+  border:none;
+  outline:none;
+  border-radius: 10rem;
+  height: 1.2rem;
+  cursor:pointer;
+  color: black;
+}
+
+.name{
+  color: black;
+  font-size: .8rem;
 }
